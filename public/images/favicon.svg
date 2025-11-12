@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .icon-blue { fill: #3C82F6; }
+      .icon-stroke { stroke: #3C82F6; stroke-width: 2.5; stroke-linejoin: round; fill: #FFFFFF; }
+      .sun { fill: #FDB813; }
+      .sun-ray { stroke: #FDB813; stroke-width: 2; stroke-linecap: round; }
+    </style>
+  </defs>
+  
+  <circle class="sun" cx="28" cy="26" r="8"/>
+  
+  <g class="sun-ray">
+    <line x1="28" y1="16" x2="28" y2="13"/>
+    <line x1="36.1" y1="18.9" x2="38.2" y2="16.8"/>
+    <line x1="38" y1="26" x2="41" y2="26"/>
+  </g>
+  
+  <path class="icon-stroke" d="M 47,48 C 55,48 57,40 52,36 C 50,28 42,28 38,32 C 34,26 26,27 22,33 C 14,34 12,42 20,48 L 47,48 Z"/>
+  
+  <polygon class="icon-blue" points="34,42 28,52 36,52 30,60"/>
+</svg>

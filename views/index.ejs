@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+      UPDATED: Your favicon.svg file is empty. This will cause a 404 error.
+      I've commented it out. You can re-enable it when you have a valid SVG icon.
+    -->
+    <!-- <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" /> -->
+    <title><%= name %> - <%= title %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#home" class="nav-logo"><%= name %></a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1 class="fade-in">Hello, I'm <%= name %></h1>
+          <p class="fade-in-delay-1">I'm a passionate <%= title %>.</p>
+          <a href="#projects" class="btn fade-in-delay-2">View My Work</a>
+        </div>
+      </section>
+
+      <section id="about" class="about-section content-section">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <img
+              src="/images/profile.png"
+              alt="Your Name"
+              class="about-image"
+            />
+            <div class="about-text">
+              <p>
+                Welcome to my portfolio! I specialize in creating modern and
+                responsive web applications. With a strong foundation in both
+                front-end and back-end development, I enjoy bringing ideas to
+                life in the browser.
+              </p>
+              <p>
+                When I'm not coding, you can find me exploring new hiking
+                trails, reading a good book, or experimenting with new recipes
+                in the kitchen.
+              </p>
+
+              <h3 class="skills-title">My Toolkit</h3>
+              <div class="tech-grid">
+                <% technologies.forEach(tech => { %>
+                <span class="tech-pill"><%= tech.name %></span>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section content-section">
+        <div class="container">
+          <h2 class="section-title">My Projects</h2>
+          <div class="project-grid">
+            <% projects.forEach(project => { %>
+            <div class="project-card">
+              <img
+                src="<%= project.imageUrl %>"
+                alt="<%= project.title %>"
+                class="project-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/edf2f7?text=Image+Error';"
+              />
+              <div class="project-info">
+                <h3><%= project.title %></h3>
+                <p><%= project.description %></p>
+                <a
+                  href="<%= project.link %>"
+                  class="btn-secondary"
+                  target="_blank"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section content-section">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="contact-text">
+            I'm currently available for freelance work and open to new
+            opportunities. If you have a project in mind or just want to say
+            hello, feel free to reach out!
+          </p>
+          <!-- UPDATED: Using dynamic email from server.js -->
+          <a href="mailto:<%= contact.email %>" class="btn">Email Me</a>
+          <div class="social-links">
+            <!-- UPDATED: Using dynamic links from server.js -->
+            <a
+              href="<%= contact.whatsapp%>"
+              target="_blank"
+              rel="noopener noreferrer"
+              >WhatsApp</a
+            >
+            <a
+              href="<%= contact.linkedin %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              href="<%= contact.github %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="<%= contact.twitter %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twitter</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; <%= new Date().getFullYear() %> <%= name %>. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
